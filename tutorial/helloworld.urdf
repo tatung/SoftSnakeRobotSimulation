@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<robot name="snake_robot">
+
+  <!-- Define the material for the visual representation -->
+  <material name="snake_material">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+
+  <!-- Link 1 -->
+  <link name="link1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!-- Replace this with the actual geometry information -->
+        <box size="1 1 1"/>
+      </geometry>
+      <material name="snake_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!-- Replace this with the actual collision geometry information -->
+        <box size="1 1 1"/>
+      </geometry>
+    </collision>
+    <!-- Physical properties for link1 -->
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <!-- Additional links... -->
+
+  <!-- Joint connecting links -->
+  <joint name="joint1" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="1 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416"/>
+    <dynamics damping="0.1"/>
+  </joint>
+
+  <!-- Additional joints... -->
+
+  <!-- Row 2 -->
+
+  <!-- Link 3 -->
+  <link name="link3">
+    <!-- ... (similar to link1) ... -->
+  </link>
+
+  <!-- Joint connecting links -->
+  <joint name="joint2" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="1 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416"/>
+    <dynamics damping="0.1"/>
+  </joint>
+
+  <!-- Additional joints... -->
+
+  <!-- Row 3 -->
+
+  <!-- Link 4 -->
+  <link name="link4">
+    <!-- ... (similar to link1) ... -->
+  </link>
+
+  <!-- Joint connecting links -->
+  <joint name="joint3" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="1 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416"/>
+    <dynamics damping="0.1"/>
+  </joint>
+
+  <!-- Additional joints... -->
+
+</robot>
